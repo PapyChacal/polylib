@@ -153,6 +153,11 @@ int SolveDiophantine(Matrix *M, Matrix **U, Vector **X) {
 	value_clear(T[i]);
       free(C);
       free(T);
+
+      Matrix_Free (unimod);
+      Matrix_Free (hermi);
+      Matrix_Free (temp);
+
       return (-1);
     };
     value_subtract(tmp,C[i],sum);
@@ -183,6 +188,12 @@ int SolveDiophantine(Matrix *M, Matrix **U, Vector **X) {
 	value_clear(T[i]);
       free(C);
       free(T);
+
+      Matrix_Free (unimod);
+      Matrix_Free (unimodinv);
+      Matrix_Free (hermi);
+      Matrix_Free (temp);
+
       return (-1);
     }
   }     

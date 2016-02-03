@@ -3088,6 +3088,10 @@ static void FindSimple(Polyhedron *P1,Polyhedron *P2,unsigned *Filter,unsigned N
 	  value_decrement(NbConstraintsLeft,NbConstraintsLeft);
 	}
       }
+      for(i=0;i<NbRays;i++)
+        value_clear(tmpR[i]);
+      for(i=0;i<NbConstraints;i++)
+        value_clear(tmpC[i]);
       SMFree(&Sat), Sat = NULL;
       free(tmpC), tmpC = NULL;
       free(tmpR), tmpR = NULL;
